@@ -1,0 +1,57 @@
+<h1>Listing ratings</h1>
+
+<table>
+  <tr>
+    <th>Member</th>
+    <th>Met your expectations</th>
+    <th>Comment1</th>
+    <th>Quality of meals and snacks</th>
+    <th>Comment2</th>
+    <th>Seminar room and facilities</th>
+    <th>Comment3</th>
+    <th>Presentation style</th>
+    <th>Comment4</th>
+    <th>Pace of instruction was appropriate for learning goals</th>
+    <th>Comment5</th>
+    <th>Able to effectively answer questions</th>
+    <th>Comment6</th>
+    <th>Clearly written and mistake free</th>
+    <th>Comment7</th>
+    <th>Sufficient detail for the topics covered</th>
+    <th>Comment8</th>
+    <th>Additional comments</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ratings.each do |rating| %>
+  <tr>
+    <td><%= rating.member_id %></td>
+    <td><%= rating.met_your_expectations %></td>
+    <td><%= rating.comment1 %></td>
+    <td><%= rating.quality_of_meals_and_snacks %></td>
+    <td><%= rating.comment2 %></td>
+    <td><%= rating.seminar_room_and_facilities %></td>
+    <td><%= rating.comment3 %></td>
+    <td><%= rating.presentation_style %></td>
+    <td><%= rating.comment4 %></td>
+    <td><%= rating.pace_of_instruction_was_appropriate_for_learning_goals %></td>
+    <td><%= rating.comment5 %></td>
+    <td><%= rating.able_to_effectively_answer_questions %></td>
+    <td><%= rating.comment6 %></td>
+    <td><%= rating.clearly_written_and_mistake_free %></td>
+    <td><%= rating.comment7 %></td>
+    <td><%= rating.sufficient_detail_for_the_topics_covered %></td>
+    <td><%= rating.comment8 %></td>
+    <td><%= rating.additional_comments %></td>
+    <td><%= link_to 'Show', rating %></td>
+    <td><%= link_to 'Edit', edit_rating_path(rating) %></td>
+    <td><%= link_to 'Destroy', rating, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Rating', new_rating_path %>
